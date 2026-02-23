@@ -6,8 +6,12 @@ import (
 )
 
 
-func main() {
-	fmt.Println(piscine.IsPalindrome("A man, a plan, a canal: Panama"))
-	fmt.Println(piscine.IsPalindrome(" "))
-	fmt.Println(piscine.IsPalindrome("race a car"))
+// func main() {
+// 	fmt.Println(gosolutions.IsPalindrome("A man, a plan, a canal: Panama"))
+// 	fmt.Println(gosolutions.IsPalindrome(" "))
+// 	fmt.Println(gosolutions.IsPalindrome("race a car"))
+// }
+
+func main () {
+	fmt.Println((gosolutions.RomanToInt("IV")))
 }
