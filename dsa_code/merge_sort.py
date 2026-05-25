@@ -1,16 +1,5 @@
 def merge_sort(list):
     '''
-<<<<<<< HEAD
-    Sorts a list in ascending order.
-    Returns a new sorted list.
-
-    Divide: find the midpoint of the list and divide into sublist
-    Conquer: Recursively sort the sublists created in previous step
-    Combine: Merge the sorted sublists created in previous step
-
-    Takes O(n log n) time and O(n) space
-    '''
-=======
     Sort a given list in an ascending order
     Returns a new sorted list
 
@@ -19,7 +8,6 @@ def merge_sort(list):
     Combine: Merge the sorted sublists created in previous step 
     '''
 
->>>>>>> 94a70ca (Edited the function body)
     if len(list) <= 1:
         return list
 
@@ -32,7 +20,6 @@ def merge_sort(list):
 def split(list):
     '''
     Divide the unsorted list at midpoint into sublists
-<<<<<<< HEAD
     Returns two sublists - left and right
 
     Time complexity:
@@ -43,10 +30,6 @@ def split(list):
     Takes O(n) space because we created two seperate lists
     '''
 
-=======
-    Return two sublists; left and right
-    '''
->>>>>>> 94a70ca (Edited the function body)
     midpoint = len(list) // 2
     left = list[:midpoint]
     right = list[midpoint:]
@@ -55,20 +38,9 @@ def split(list):
 
 def merge(left, right):
     '''
-<<<<<<< HEAD
-    Merges to lists (arrays), sorting them in the process
-    Returns a new merged list.
-
-    RUns in overalla O(n) time because for a list of n, we are 
-    making a number of merge operations; sorting and merging 
-    the single lists into sub lists and finally into one sorted and merged list
-    '''
-
-=======
     Merges two lists (arrays), sorting them in the process
     Returns a new merged list
     '''
->>>>>>> 94a70ca (Edited the function body)
     l = []
     i = 0
     j = 0
@@ -76,26 +48,6 @@ def merge(left, right):
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
             l.append(left[i])
-<<<<<<< HEAD
-            i = i + 1
-        else:
-            l.append(right[j])
-            j = j + 1
-    
-    while i < len(left):
-        l.append(left[i])
-        i = i + 1
-
-    while j < len(right):
-        l.append(right[j])
-        j = j + 1
-
-    return l
-
-# alist = [54, 26, 62, 23, 17, 77, 31]
-# l = merge_sort(alist)
-# print(l)
-=======
             i += 1
         else:
             l.append(right[j])
@@ -114,25 +66,11 @@ def merge(left, right):
 alist = [54, 26, 52, 32, 17, 77, 31, 12, 23]
 l = merge_sort(alist)
 print(l)
->>>>>>> 94a70ca (Edited the function body)
 
 def verify_sorted(list):
     n = len(list)
 
-<<<<<<< HEAD
-    if n == 0 or n == 1:
-        return True
-
-    return list[0] < list[1] and verify_sorted(list[1: ])
-
-alist = [54, 26, 62, 23, 17, 77, 31]
-l = merge_sort(alist)
-
-print(verify_sorted(alist))
-print(verify_sorted(l))
-=======
     if n == 0 or n ==1:
         return True
     
     return list[0] < list[1] and verify_sorted(list[1:])
->>>>>>> 94a70ca (Edited the function body)
