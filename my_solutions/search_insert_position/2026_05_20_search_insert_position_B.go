@@ -65,4 +65,46 @@ than this element?
   We shift our serach window to the left half.
 - When the search window closes: the left pointer (`left` in code) is pointing to the 
   exact index where the pointer either is or belongs.
+
+
+Walkthrough example:
+nums = [1, 3, 5, 6], target = 5
+
+Step 1: Create the left and right pointers (index positions)
+	left : =  0
+	right := 4 - 1 = 3
+
+Step 2: First iteration - check if left is less than right , which it is
+	left (0) < right (3)
+
+Step 3: Get the middle index position
+	mid := (0 + 3) / 2 = 1 (gets the integer value, ignores remainder)
+
+Step 4: Confirm if middle value is less than target
+	nums[mid] = 3, target = 5 
+
+Step 5: We search the right half
+    left = mid + 1 → 1 + 1 = 2
+	right = 3 (still 3)
+
+Step 6: Second Iteration - check if left is less than right , which it is
+	left (2) < right (3)
+
+Step 7: Get the middle index again
+	mid = (left + right) / 2 → (2 + 3) / 2 = 2 (gets the integer value, ignores remainder)
+
+Step 8: Confirm if middle value is less than target
+	nums[mid] = 5, target = 5 (they are equal)
+
+Step 9 : Therfeore, we search left half
+	right = mid - 1 → 2 - 1 = 1
+
+Step 10: Third iteration - check if left is less than right , which it is NOT
+	left (2) > right (1)
+
+Step 11: Final return
+	return left which is 2, which is the index poition of target 5
+
+Time complexity: O(log N) → The serach space is halved at every iteration
+Space complexity: 0(1) → No extra memory or data structures, just variables with constant memory.
 */
