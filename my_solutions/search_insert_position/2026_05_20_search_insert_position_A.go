@@ -45,7 +45,7 @@ func SearchInsertA(nums []int, target int) int {
 Intuition: The intuition involves searching for an insert position 
 using a linear scan - we simply walk through the sorted array from 
 left to right, comparing the target against each element until you
-find a value equal to or greater than your target. THe current index 
+find a value equal to or greater than your target. The current index 
 is your answer, or if you reach the end, it goes at the very back.
 
 Step by Step Walkthrough:
