@@ -29,3 +29,40 @@ nums contains disntinct values sorted in ascending order
 */
 
 // Using a Binary Search
+func SearchInsertB(nums []int, target int) int {
+	// Initialize two pointers; left at start 0, right at the end len(nums) - 1
+	left, right := 0, len(nums) - 1
+
+	// Keep searching while left pointer hasn't passed the right pointer
+	for left <= right {
+		// Find middle index
+		mid := (left + right) / 2
+
+		// If middle value is less than target, search right half
+		if nums[mid] < target {
+			left = mid + 1
+		// Otherwise serach left half, (include equal case)
+		} else {
+			right = mid - 1
+		}
+	}
+	// Return left pointer, position where target should be inserted
+	return left
+}
+
+/*
+The intuition behind the optimized O(log n) solution of solving this question is 
+binary search. Because the array is sorted and contains distinct integers, you can 
+bypass a slow linear scan, by continally halving the search space.
+
+At any given point, the question boils down to asking: is my target greater or smaller 
+than this element?
+
+- if the target is found: return the midpoint index
+- if the midpoint value is smaller than the target: the target belongs to the right.
+  We shift our search window to the right half.
+- if the midpoint value is greater than the target: the target belongs to the left.
+  We shift our serach window to the left half.
+- When the search window closes: the left pointer (`left` in code) is pointing to the 
+  exact index where the pointer either is or belongs.
+*/
