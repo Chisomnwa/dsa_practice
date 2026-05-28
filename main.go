@@ -4,11 +4,11 @@ package main
 
 import (
 	"fmt"
-	//dsa_practice/my-solutions/two-sum"
-	//"dsa_practice/my-solutions/length-of-last-word"
-	//"dsa_practice/my-solutions/roman_to_integer"
-	//"ddsa_practice/my_solutions/missing_number"
-	"dsa_practice/my_solutions/search_insert_position"
+	//dsa_practice/arrays/two-sum"
+	//"dsa_practice/strings/length-of-last-word"
+	//"dsa_practice/strings/roman_to_integer"
+	//"ddsa_practice/arrays/missing_number"
+	"dsa_practice/arrays/search_insert_position"
 )
 
 // func main() {
