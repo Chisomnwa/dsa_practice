@@ -8,7 +8,8 @@ import (
 	//"dsa_practice/strings/length-of-last-word"
 	//"dsa_practice/strings/roman_to_integer"
 	//"ddsa_practice/arrays/missing_number"
-	"dsa_practice/arrays/search_insert_position"
+	//"dsa_practice/arrays/search_insert_position"
+	"dsa_practice/arrays/build_array_from_permutation"
 )
 
 // func main() {
@@ -48,14 +49,23 @@ import (
 // 	fmt.Println(missingnumber.MissingNumberB(numsB))
 // }
 
+// func main() {
+// 	numsA := []int{1,3,5,6}; targetA := 5
+// 	numsB := []int{1,3,5,6}; targetB := 2
+// 	numsC := []int{1,3,5,6}; targetC := 7
+// 	fmt.Println(searchinsertposition.SearchInsertA(numsA, targetA))
+// 	fmt.Println(searchinsertposition.SearchInsertA(numsB, targetB))
+// 	fmt.Println(searchinsertposition.SearchInsertA(numsC, targetC))
+// 	fmt.Println(searchinsertposition.SearchInsertB(numsA, targetA))
+// 	fmt.Println(searchinsertposition.SearchInsertB(numsB, targetB))
+// }
+
 func main() {
-	numsA := []int{1,3,5,6}; targetA := 5
-	numsB := []int{1,3,5,6}; targetB := 2
-	numsC := []int{1,3,5,6}; targetC := 7
-	fmt.Println(searchinsertposition.SearchInsertA(numsA, targetA))
-	fmt.Println(searchinsertposition.SearchInsertA(numsB, targetB))
-	fmt.Println(searchinsertposition.SearchInsertA(numsC, targetC))
-	fmt.Println(searchinsertposition.SearchInsertB(numsA, targetA))
-	fmt.Println(searchinsertposition.SearchInsertB(numsB, targetB))
+	numsA := []int{0,2,1,5,3,4}
+	numsB := []int{5,0,1,2,3,4}
+	fmt.Println(buildarrayfrompermutation.BuildArrayA(numsA))
+	fmt.Println(buildarrayfrompermutation.BuildArrayA(numsB))
+	// fmt.Println(searchinsertposition.SearchInsertA(numsA))
+	// fmt.Println(searchinsertposition.SearchInsertB(numsB))
 }
 
