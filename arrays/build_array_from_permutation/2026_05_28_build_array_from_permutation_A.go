@@ -33,6 +33,7 @@ Constraints:
 The elements in nums are distinct
 */
 
+// Using a brute force
 func BuildArrayA(nums []int) []int {
 	// Create an array that will be returned as the new array
 	ans := make([]int, len(nums))
