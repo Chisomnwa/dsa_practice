@@ -65,7 +65,7 @@ func main() {
 	numsB := []int{5,0,1,2,3,4}
 	fmt.Println(buildarrayfrompermutation.BuildArrayA(numsA))
 	fmt.Println(buildarrayfrompermutation.BuildArrayA(numsB))
-	// fmt.Println(searchinsertposition.SearchInsertA(numsA))
-	// fmt.Println(searchinsertposition.SearchInsertB(numsB))
+	fmt.Println(buildarrayfrompermutation.BuildArrayB(numsA))
+	fmt.Println(buildarrayfrompermutation.BuildArrayB(numsB))
 }
 
