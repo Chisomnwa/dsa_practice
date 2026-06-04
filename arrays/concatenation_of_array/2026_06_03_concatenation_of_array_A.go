@@ -70,14 +70,19 @@ Step 2: Create a new array `ans` of size `n`.
 
 Step 3: Iterate through the array `nums` twice
 	- in the first pass, assign elements from nums for the first half of ans
-	- in the second pass, assign elements from nums to the second half of ans
 
 	when  i = 0; n = 3:
 		ans[i] = nums[i] = nums[0] = 1
+		ans becomes = [1, 0, 0, 0, 0, 0]
+
+
+	- in the second pass, assign elements from nums to the second half of ans
+
+	
 
 		ans[i + n] = nums[i] → ans[0 + 3] = ans[3] = 1
 
-		ans becomes = [1, 0, 0, 1, 0, 0]
+		
 
 	when i = 1; n = 3:
 		ans[i] = nums[i] = nums[1] = 2
