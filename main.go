@@ -10,7 +10,8 @@ import (
 	//"ddsa_practice/arrays/missing_number"
 	//"dsa_practice/arrays/search_insert_position"
 	//"dsa_practice/arrays/build_array_from_permutation"
-	"dsa_practice/arrays/concatenation_of_array"
+	//"dsa_practice/arrays/concatenation_of_array"
+	"dsa_practice/arrays/running_sum_of_1d_array"
 )
 
 // func main() {
@@ -70,13 +71,24 @@ import (
 // 	fmt.Println(buildarrayfrompermutation.BuildArrayB(numsB))
 // }
 
+// func main() {
+// 	numsA := []int{1,2,1}
+// 	numsB := []int{1,2,3,1}
+// 	fmt.Println(concatenationofarray.GetConcatenationB(numsA))
+// 	fmt.Println(concatenationofarray.GetConcatenationB(numsB))
+// 	fmt.Println()
+// 	fmt.Println(concatenationofarray.GetConcatenationB(numsA))
+// 	fmt.Println(concatenationofarray.GetConcatenationB(numsB))
+// }
+
 func main() {
-	numsA := []int{1,2,1}
-	numsB := []int{1,2,3,1}
-	fmt.Println(concatenationofarray.GetConcatenationB(numsA))
-	fmt.Println(concatenationofarray.GetConcatenationB(numsB))
-	fmt.Println()
-	fmt.Println(concatenationofarray.GetConcatenationB(numsA))
-	fmt.Println(concatenationofarray.GetConcatenationB(numsB))
+	numsA := []int{1,2,3,4}
+	numsB := []int{1,1,1,1}
+	fmt.Println(runningsumof1darray.runningSumB(numsA))
+	fmt.Println(runningsumof1darray.runningSumB(numsB))
+	// fmt.Println()
+	// fmt.Println(concatenationofarray.GetConcatenationB(numsA))
+	// fmt.Println(concatenationofarray.GetConcatenationB(numsB))
 }
+
 
