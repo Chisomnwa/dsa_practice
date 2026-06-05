@@ -75,27 +75,26 @@ Step 3: Iterate through the array `nums` twice
 		ans[i] = nums[i] = nums[0] = 1
 		ans becomes = [1, 0, 0, 0, 0, 0]
 
-
-	- in the second pass, assign elements from nums to the second half of ans
-
-	
-
-		ans[i + n] = nums[i] → ans[0 + 3] = ans[3] = 1
-
-		
-
 	when i = 1; n = 3:
 		ans[i] = nums[i] = nums[1] = 2
-
-		ans[i + n] = nums[i] → ans[1 + 3] = ans[4] = 2
-
-		ans becomes = [1, 2, 0, 1, 2, 0]
+		ans becomes = [1, 2, 0, 0, 0, 0]
 
 	when i = 2; n = 3:
 		ans[i] = nums[i] = nums[2] = 1
+		ans becomes = [1, 2, 1, 0, 0, 0]
 
+	- in the second pass, assign elements from nums to the second half of ans
+
+	when i = 3, n = 6:
+		ans[i + n] = nums[i] → ans[0 + 3] = ans[3] = 1
+		ans becomes = [1, 2, 1, 1, 0, 0]
+		
+	when i = 4, n = 6:
+		ans[i + n] = nums[i] → ans[1 + 3] = ans[4] = 2
+		ans becomes = [1, 2, 0, 1, 2, 0]
+		
+	when i = 5; n = 3:
 		ans[i + n] = nums[i] → ans[2 + 3] = ans[5] = 1
-
 		ans becomes = [1, 2, 1, 1, 2, 1]
 
 Step 4: Return ans = [1,2,1,1,2,1]
