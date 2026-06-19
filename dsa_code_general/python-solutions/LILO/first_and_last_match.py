@@ -83,30 +83,72 @@ class Solution():
         unsorted for now.
 
         Run through examples with my current understanding:
+
         Example 1:
-        nums = [4, 2, 7, 2, 9] target= 2
+        nums = [4, 2, 7, 2, 9] target = 2
 
-        at 0: i = 4 -> no
-           1: i = 2 -> first match
-           2: i = 7 -> no
-           3: i = 2 -> last index
-           4: i = 9 -> no
+        first : -1
 
-        brute force: 
+        i = 0: nums[0] = 4 -> no match
+        i = 1: nums[1] = 2 -> match! first = 1, break
+
+        I stop as soon as I find the first match, since scanning further
+        forward wouldn't change that answer.
+
+        last = -1
+        i = 4: nums[4] = 9 -> no match
+        i = 3: nums[3] = 2 -> match! last = 3, break
+
+        working backwards from the end, the first macth I hit is
+        automatically the rightmost - so I can stop immediately.
+
+        Resut: [first, last] = [1, 3]
+
+        Example 2:
+        nums = [5, 5, 5] target = 5
+
         first = -1
+        i = 0: nums[0] = 5 -> match! first = 0, break
 
-        first loop:
-            [4, 2, 7, 2, 9]
-                ^
-             first = i -> 1
-             break
+        last = -1
+        i = 2: nums[2] = 5 -> match! last = 2, break
 
-        last = -1 
-        second loop:
+        Result: [first, last] = [0, 2]
+
+        Example 3:
+        nums = [1, 3, 4] target = 2
+
+        first = -1
+        i = 0: nums[0] = 1 -> no match
+        i = 1: nums[1] = 3 -> no match
+        i = 2: nums[2] = 4 -> no match
+        (loop ends, no break triggered)
+
+        first stays at -1
+
+        last = -1
+        i = 2: nums[2] = 4 -> no match
+        i = 1: nums[1] = 3 -> no match
+        i = 0: nums[0] = 1 -> no match
+
+        last stays at -1 too
+
+        Result: [first, last] = [-1, -1]
+
+        What is the problem with this brute force? We are rechecneking the numbers
+        multiple times.
+
+        My first instincst here is actually to do two seperate scans - one forward
+        pass just to find the first match, then a second pass to find the last match.
+        That works, but it's wasteful: I'm touching the array twice when I could get
+        both the ansers from a single pass. So, while it's still O(n), it's roughly
+        double the work for no real benefit. I can do this with one pass.
+
         
-
-        2: 4, 2
-        2: 7, 2
-        2: 9
-       
         """
+
+####
+"""
+
+
+"""
