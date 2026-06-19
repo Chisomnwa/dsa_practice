@@ -72,21 +72,22 @@ class Solution():
         input: a list of nums and a target
         output: list of two integers [index of the first and last occurence of target]
 
-        goal: to return the index positions of the first and last occurrence(positions) of target
+        goal: to return the index of the first and last occurrence(positions) of the target.
 
         edge cases:
         - if the list is empty -> return [-1, -1]
         - if the target doesn't appear at all  -> return [-1, -1]
 
         clarifying questions: is nums sorted? I could potentially do this in 
-        in O(Logn) with binary search isntead of O(n). BUt, I'll assume it's
+        in O(Logn) with binary search instead of O(n). But, I'll assume it's
         unsorted for now.
 
         Run through examples with my current understanding:
 
         Example 1:
         nums = [4, 2, 7, 2, 9] target = 2
-
+                   ^
+        
         first : -1
 
         i = 0: nums[0] = 4 -> no match
@@ -100,7 +101,7 @@ class Solution():
         i = 3: nums[3] = 2 -> match! last = 3, break
 
         working backwards from the end, the first macth I hit is
-        automatically the rightmost - so I can stop immediately.
+        automatically the rightmost (i.e last occurrence)- so I can stop immediately.
 
         Resut: [first, last] = [1, 3]
 
@@ -136,19 +137,76 @@ class Solution():
         Result: [first, last] = [-1, -1]
 
         What is the problem with this brute force? We are rechecneking the numbers
-        multiple times.
+        multiple times. Inefficnet if I have a large list of numbers.
 
         My first instincst here is actually to do two seperate scans - one forward
         pass just to find the first match, then a second pass to find the last match.
         That works, but it's wasteful: I'm touching the array twice when I could get
-        both the ansers from a single pass. So, while it's still O(n), it's roughly
+        both the answers from a single pass. So, while it's still O(n), it's roughly
         double the work for no real benefit. I can do this with one pass.
 
-        
+        What best way to appraoch this Pseudocode:
+
+            handle edge cases (list is empty or nums don't exist)
+
+            if target not in list:
+                return [-1, -1]
+
+            first = None
+            last = None
+
+            loop through nums using enumerate function:
+                if v == target:
+                    if first is still None:
+                        first = i
+                    last = i
+            return [first, last]
         """
+        # handle edge cases (if list is empty or target doesn't exist)
+        if target not in nums:
+            return [-1, -1]
+        
+        first = None
+        last = None
 
-####
+        for i, v in enumerate(nums):
+            if v == target:
+                if first is None:
+                    first = i
+                last = i
+
+        return [first, last]
+
+
+sol = Solution()
+
+nums1 = [4, 2, 7, 2, 9]
+target1 = 2
+
+nums2 = [5, 5, 5]
+target2 = 5
+
+nums3 = [1, 3, 4]
+target3 = 2
+
+nums4 = []
+target4 = 2
+
+sol = Solution()
+print(sol.first_and_last_match(nums1, target1))
+print(sol.first_and_last_match(nums2, target2))
+print(sol.first_and_last_match(nums3, target3))
+
+
 """
+Brute force:
+Time complexity: O(n) because each pass independently scans at most the whole list 
+once in the worst case (target not found, or found right at the far edge being scanned from).
+Two passes O(n) + O(n), which simplifies to O(n) - constants drop out in Big-O notation.
+Space complexity: O(1) because only variables are created. No extra data structures.
 
-
+Optimized approach:
+Time complexity: O(n) because you walk through the list exactly once, checking each element
+a single time.
+Space complexity: same as above. No extra data structures created.
 """

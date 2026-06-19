@@ -79,3 +79,13 @@ nums2 = [1, 2, 3, 4]
 
 print(sol.containsDuplicate(nums1))
 print(sol.containsDuplicate(nums2))
+
+"""
+brute force approach:
+- Time complexity: O(n²) because for each element, we compare it against every other element in the array.
+- Space complexity: O(1), no extra data structure was created.
+
+optimized approach:
+- Time complexity: O(n) because we loop through each element once, and set lookups are O(1) on average.
+- Space complexity: O(n) because the set can grow to hold every element in the worst case (no duplicates).
+"""
