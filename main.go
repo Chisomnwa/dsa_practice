@@ -2,17 +2,17 @@ package main
 
 // My solutions are housed in the my_solutions folder but I have moved this to another repo called dsa_practice
 
-import (
-	"fmt"
-	//dsa_practice/arrays/two-sum"
-	//"dsa_practice/strings/length-of-last-word"
-	//"dsa_practice/strings/roman_to_integer"
-	//"ddsa_practice/arrays/missing_number"
-	//"dsa_practice/arrays/search_insert_position"
-	//"dsa_practice/arrays/build_array_from_permutation"
-	//"dsa_practice/arrays/concatenation_of_array"
-	"dsa_practice/arrays/running_sum_of_1d_array"
-)
+// import (
+// 	"fmt"
+// 	//dsa_practice/arrays/two-sum"
+// 	//"dsa_practice/strings/length-of-last-word"
+// 	//"dsa_practice/strings/roman_to_integer"
+// 	//"ddsa_practice/arrays/missing_number"
+// 	//"dsa_practice/arrays/search_insert_position"
+// 	//"dsa_practice/arrays/build_array_from_permutation"
+// 	//"dsa_practice/arrays/concatenation_of_array"
+// 	"dsa_practice/arrays/running_sum_of_1d_array"
+// )
 
 // func main() {
 // 	nums := []int{2, 7, 5, 9, 11}
@@ -81,14 +81,14 @@ import (
 // 	fmt.Println(concatenationofarray.GetConcatenationB(numsB))
 // }
 
-func main() {
-	numsA := []int{1,2,3,4}
-	numsB := []int{1,1,1,1}
-	fmt.Println(runningsumof1darray.runningSumB(numsA))
-	fmt.Println(runningsumof1darray.runningSumB(numsB))
+// func main() {
+// 	numsA := []int{1,2,3,4}
+// 	numsB := []int{1,1,1,1}
+// 	fmt.Println(runningsumof1darray.runningSumB(numsA))
+// 	fmt.Println(runningsumof1darray.runningSumB(numsB))
 	// fmt.Println()
 	// fmt.Println(concatenationofarray.GetConcatenationB(numsA))
 	// fmt.Println(concatenationofarray.GetConcatenationB(numsB))
-}
+//}
 
 
