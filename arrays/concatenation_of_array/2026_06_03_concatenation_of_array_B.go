@@ -65,9 +65,9 @@ Step 1: get the length of nums
 Step 2: Create a new array `ans` of size `n`.
 	ans := make([] int, 2 * n) → ans = [0, 0, 0, 0, 0, 0]
 
-Step 3: Iterate through the array `nums` twice
-	- in the first pass, assign elements from nums for the first half of ans
-	- in the second pass, assign elements from nums to the second half of ans
+Step 3: Iterate through nums and fill the two halves of ans separately
+	- fill first half: assign elements from nums for the first half of ans
+	- fill second half: assign elements from nums to the second half of ans
 
 	when  i = 0; n = 3:
 		ans[i] = nums[i] = nums[0] = 1

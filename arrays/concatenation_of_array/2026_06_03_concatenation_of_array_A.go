@@ -31,7 +31,8 @@ n == nums.length
 1 <= nums[i] <= 1000
 */
 
-// Using a brute force approach (Manual, element-by-step copying)
+// Using a brute force approach (Manual, element-by-step copying) -
+// MY RESEARCH DAYS LATER SHOWS THIS IS STILL AN OPTMIZED APPROACH; just a naive implementation
 func GetConcatenationA(nums []int) []int {
 	n := len(nums)
 	ans := make([]int, 2*n)
@@ -69,7 +70,7 @@ Step 2: Create a new array `ans` of size `n`.
 	ans := make([] int, 2 * n) → ans = [0, 0, 0, 0, 0, 0]
 
 Step 3: Iterate through nums and fill the two halves of ans separately
-	- in the first pass, assign elements from nums for the first half of ans
+	- fill first half: assign elements from nums for the first half of ans
 
 	when  i = 0; n = 3:
 		ans[i] = nums[i] = nums[0] = 1
@@ -83,7 +84,7 @@ Step 3: Iterate through nums and fill the two halves of ans separately
 		ans[i] = nums[i] = nums[2] = 1
 		ans becomes = [1, 2, 1, 0, 0, 0]
 
-	- in the second pass, assign elements from nums to the second half of ans
+	- fill second half: assign elements from nums to the second half of ans
 
 	when i = 3, n = 6:
 		ans[i + n] = nums[i] → ans[0 + 3] = ans[3] = 1
