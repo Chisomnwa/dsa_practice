@@ -66,7 +66,7 @@ Expected Output:
 An empty list has no matching indexes.
 """
 
-class Solution():
+class Solution:
     def first_and_last_match(self, nums: list[int], target:int) -> list[int]:
         """
         input: a list of nums and a target
