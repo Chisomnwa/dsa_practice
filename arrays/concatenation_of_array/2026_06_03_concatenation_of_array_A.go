@@ -14,7 +14,7 @@ Return the array ans.
 Example 1:
 Input: nums = [1,2,1]
 Output: [1,2,1,1,2,1]
-Explanation: The array ans is formed as follows: 
+Explanation: The array ans is formed as follows:
 	- ans = [nums[0], nums[1], nums[2], nums[0], nums[1], nums[2]]
 	- ans = [1,2,1,1,2,1]
 
@@ -32,25 +32,25 @@ n == nums.length
 */
 
 // Using a brute force approach (Manual, element-by-step copying)
-func GetConcatenationA(nums []int) []int{
+func GetConcatenationA(nums []int) []int {
 	n := len(nums)
-	ans := make([]int, 2 * n)
+	ans := make([]int, 2*n)
 
-	for i := 0; i < n; i++{
+	for i := 0; i < n; i++ {
 		// Get the first half of ans
 		ans[i] = nums[i]
 	}
 
 	for i := 0; i < n; i++ {
 		// Get the second half of ans
-		ans[i + n] = nums[i]
+		ans[i+n] = nums[i]
 	}
 
 	return ans
 }
 
 /*
-Intuition: Given an integer `nums` of length `n`, we need to create a new array `ans` of 
+Intuition: Given an integer `nums` of length `n`, we need to create a new array `ans` of
 length `2n` such that:
 
 	- For 0 <= i < n, ans[i] == nums[i]
@@ -59,7 +59,7 @@ length `2n` such that:
 In simpler terms, the output `ans` is just the `nums` array concatenated with
 itself. i.e., ans = nums + nums
 
-Walkthrough: CORRECT THISSSSSSSSSSS
+Walkthrough:
 nums = [1,2,1]
 
 Step 1: get the length of nums
@@ -68,7 +68,7 @@ Step 1: get the length of nums
 Step 2: Create a new array `ans` of size `n`.
 	ans := make([] int, 2 * n) → ans = [0, 0, 0, 0, 0, 0]
 
-Step 3: Iterate through the array `nums` twice
+Step 3: Iterate through nums and fill the two halves of ans separately
 	- in the first pass, assign elements from nums for the first half of ans
 
 	when  i = 0; n = 3:
@@ -88,11 +88,11 @@ Step 3: Iterate through the array `nums` twice
 	when i = 3, n = 6:
 		ans[i + n] = nums[i] → ans[0 + 3] = ans[3] = 1
 		ans becomes = [1, 2, 1, 1, 0, 0]
-		
+
 	when i = 4, n = 6:
 		ans[i + n] = nums[i] → ans[1 + 3] = ans[4] = 2
 		ans becomes = [1, 2, 0, 1, 2, 0]
-		
+
 	when i = 5; n = 3:
 		ans[i + n] = nums[i] → ans[2 + 3] = ans[5] = 1
 		ans becomes = [1, 2, 1, 1, 2, 1]
