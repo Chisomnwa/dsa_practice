@@ -94,8 +94,12 @@ class Solution:
         but the stack still holds an unclosed '('. That leftover is what rule 3 is really checking: every 
         OPENER must also eventually be closed, not just every closer needing an opener.
 
-        Time complexity: O(n)
-        Space complexity: O(n) - we are creating two new data structures -> O(n) + O(n) = 2 * O(n) = O(n)
+        Time complexity: O(n) - because we loop through the string exactly once, character by character.
+            Every operqation under that loop is O(1)
+
+        Space complexity: O(n) - a new data structure stack was created. it can grow as large as the input string
+            in the worst case. The mapping dictionary is O(1) because it is fixed at three entries regardless of 
+            input size, so it doesn't count towards growth.
         """
         # create a dict that shows what closers to openers they must match
         mapping = { ')': '(', ']': '[', '}': '{'}
