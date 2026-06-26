@@ -6,15 +6,15 @@ class Solution:
         """
         input: a list representing a linked list (e.g,. [10, 20, 30])
 
-        output: a sinle value (the first elemnt) or None
+        output: a single value (the first elemnt) or None
 
         goal: extract and return the head node's value
 
         edge cases:
-            - empty list should return NOne
-            - single element list e. [5] should retyurn [5]
+            - empty list should return None
+            - single element list e.g [5] should return [5]
         
-        Walkthroufgh with an example:
+        Walkthrough with examples:
 
         Example 1: 
         [10, 20, 30]
@@ -30,7 +30,7 @@ class Solution:
         [] -> empty list -> returns None
 
         is the brute-force approach inefficient?
-        No. THere's only one possible approach here: check if the list is empty; 
+        No. There's only one possible approach here: check if the list is empty; 
         if not, return the first element. That's O(1) time (one direct access to
         index 0) and O(1) space (no extra data structure). No optimization needed.
 
