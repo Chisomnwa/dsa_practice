@@ -16,7 +16,7 @@ class Solution:
         head          tail
           |             |
           ▼             ▼ 
-         [1] -> [2] -> [3] -> Null
+         [1] -> [2] -> [3] -> None
 
         current = head
 
@@ -28,18 +28,18 @@ class Solution:
         head   tail
          |      |
          ▼      ▼ 
-        [2] -> [3] -> Null
+        [2] -> [3] -> None
 
         count = 2
 
                tail
                  |
                  ▼ 
-        head -> [3] -> Null
+        head -> [3] -> None
 
         count = 3
 
-        current = Null , and counter stops
+        current = None , and counter stops
 
         Return 3
 
@@ -55,7 +55,7 @@ class Solution:
                tail
                  |
                  ▼ 
-        head -> [10] -> Null
+        head -> [10] -> None
 
         current = head
         count = 0
@@ -64,7 +64,7 @@ class Solution:
 
         current = current.next
 
-        current = null, counter stops
+        current = None, counter stops
         
         return 1
 
