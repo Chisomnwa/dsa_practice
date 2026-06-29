@@ -7,7 +7,7 @@ determine if the input string is valid.
 An input string is valid if:
 1. Open brackets must be closed by the same type of brackets
 2. Open brackets must be closed in the correct order
-3. Every close bracket has a corresponding open braclket of the same type
+3. Every close bracket has a corresponding open bracket of the same type
 
 Example: 
 Input: s = "()[]{}"
@@ -80,8 +80,8 @@ class Solution:
 
         ---
         Why a dict (mapping) instead of multiple if/elif checks?
-        Using mapping[char] gives O(1) lookup to find "what opener does this cloder need?".
-        This helps us avoid writing seperate if-statemen per bracket type. It also makes it trivial 
+        Using mapping[char] gives O(1) lookup to find "what opener does this closer need?".
+        This helps us avoid writing seperate if-statement per bracket type. It also makes it trivial 
         to extend to more bracket types later, with no new logic, just one more dict entry.
 
         Why check "if stack is empty" before popping?
@@ -89,16 +89,18 @@ class Solution:
         This check catches an orphan closer early. e.g s = ")(" where a closer appears with nothing open yet.
 
         Why the final check "stack is empty" at the very end, not just inside the loop?
-        The loop only catches MISMATCHES as they happen. It never catches the case where openeers are left
-        dangling with no closer ever arriving. e.g s = "(()" - - the loop finiches with no mismatch found, 
+        The loop only catches MISMATCHES as they happen. It never catches the case where openers are left
+        dangling with no closer ever arriving. e.g s = "(()" - - the loop finishes with no mismatch found, 
         but the stack still holds an unclosed '('. That leftover is what rule 3 is really checking: every 
         OPENER must also eventually be closed, not just every closer needing an opener.
 
         Time complexity: O(n) - because we loop through the string exactly once, character by character.
-            Every operqation under that loop is O(1)
+            Every operation under that loop is O(1)
 
         Space complexity: O(n) - a new data structure stack was created. it can grow as large as the input string
-            in the worst case. The mapping dictionary is O(1) because it is fixed at three entries regardless of 
+            in the worst case. 
+            
+        Note: The mapping dictionary is O(1) because it is fixed at three entries regardless of 
             input size, so it doesn't count towards growth.
         """
         # create a dict that shows what closers to openers they must match
