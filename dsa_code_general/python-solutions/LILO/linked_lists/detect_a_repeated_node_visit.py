@@ -5,6 +5,8 @@ class Solution:
 
         output: bool -> return true if an id appears twice in the list, else return false
 
+        goal: return true if an id apperas twice, and otherwise return false.
+
         edge case:
         - an empty list should return false, because no repeated values
 
