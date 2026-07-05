@@ -51,7 +51,7 @@ class Solution:
         char '[' -> opener -> push -> stack = ['(', '[']
         char ')' -> closer -> top of the stack is '[' -> not ')' -> doesn't match -> return False
 
-        Notice why this fails rule 2 (correct order): even though '(' exists somwhere in the stack,
+        Notice why this fails rule 2 (correct order): even though '(' exists somewhere in the stack,
         the bracket that must close next is whatever that was opened recently and that was '[' not '('.
         That's exactly why a stack (LIFO) is the right structure: it always hands you the most recent 
         unclosed opener first, which is the one any new closer is obligated to match.
@@ -61,7 +61,7 @@ class Solution:
         # map each closer to the opener it must match
         mapping = {')': '(', ']': '[', '}': '{'}
 
-        # create a stach to hold all brackets that we must match
+        # create a stack to hold all brackets that we must match
         stack = []
 
         for char in s:
@@ -90,7 +90,7 @@ class Solution:
 
         Why the final check "stack is empty" at the very end, not just inside the loop?
         The loop only catches MISMATCHES as they happen. It never catches the case where openers are left
-        dangling with no closer ever arriving. e.g s = "(()" - - the loop finishes with no mismatch found, 
+        dangling with no closer ever arriving. e.g s = "(((" - - the loop finishes with no mismatch found, 
         but the stack still holds an unclosed '('. That leftover is what rule 3 is really checking: every 
         OPENER must also eventually be closed, not just every closer needing an opener.
 
