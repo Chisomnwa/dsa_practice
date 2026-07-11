@@ -35,7 +35,7 @@ class Hashtable:
             - Double the capacity
             - Create a new bucket array
             - Re-hash every existing node into the new array
-            - Do not lose anyv data
+            - Do not lose any data
 
         Why do we resize?
 
@@ -56,10 +56,10 @@ class Hashtable:
 
         Too many items:
         - Lots of collisions begin happening.
-        - Instead of making thr linked lists longer, we double the bucket array
+        - Instead of making the linked lists longer, we double the bucket array
 
         Step 1:
-        Old buickets:
+        Old buckets:
 
         Capacity = 4
 
@@ -78,7 +78,7 @@ class Hashtable:
         new_buckets = [None] * new_capacity
 
         Now:
-        Cpacity = 8
+        Capacity = 8
 
         0
         1
@@ -98,7 +98,7 @@ class Hashtable:
         current = bucket
 
         Step 4:
-        Re-hash every key:
+        Re-hash every key
 
         Previously:
         hash(key) % 4
@@ -167,7 +167,7 @@ class Hashtable:
 
                 index = self._hash(current, key)
 
-                current.next = self.buckets[inde]
+                current.next = self.buckets[index]
                 self.buckets[index] = current
 
                 current = next_node
@@ -389,7 +389,7 @@ class Hashtable:
 
         while current is not None:
             if current.key == key:
-                return currrent.value
+                return current.value
             current = current.next
 
         return None
