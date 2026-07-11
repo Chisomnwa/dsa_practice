@@ -102,7 +102,7 @@ class Solution:
 
         - - -
         Time complexity: O(n) because of one pass through the list
-        Space complesity: O(n) uo to n key-value pairs stored
+        Space complexity: O(n) up to n key-value pairs stored
         """
         seen = {}
 
