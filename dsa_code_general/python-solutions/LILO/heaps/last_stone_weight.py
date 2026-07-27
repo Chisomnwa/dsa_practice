@@ -207,3 +207,16 @@ class Solution:
             return -heap[0]
 
         return 0
+
+
+
+
+"""
+Interview explanation (30 seconds)
+
+I recognized this as a max-heap problem because we're repeatedly asked to retrieve 
+the two largest elements. A max heap lets us remove the largest element in O(log n) 
+and insert the remaining difference in O(log n). I first build a max heap, then r
+epeatedly pop the two largest stones, smash them together, and push back the difference if it's non-zero. 
+When one or zero stones remain, I return the remaining weight or 0 if the heap is empty.
+"""
