@@ -3,14 +3,13 @@
 This is where I document the questions I solve on Data Structures and Algorithm. The goal here is to improve my problem solving skills and how I think about code and approach problems.
 
 
-# My Solution to the DSA SOlutions and Pattens
+# My Solution to the DSA S0lutions and Pattens
 
 This folder houses my solutions to the DSA questions, and my solutions are wriiten in Go and Python
 
 # Folder Structure
 
-(base) chisom@Chisoms-MacBook-Pro dsa_practice % tree -L 2
-.
+```bash
 ├── README.md
 ├── arrays
 │   ├── build_array_from_permutation
@@ -29,7 +28,7 @@ This folder houses my solutions to the DSA questions, and my solutions are wriit
     ├── length_of_last_word
     ├── merge_strings_alternately.py
     └── roman_to_integer
-
+```
 
 The two topic solutions; **arrays** and **strings** has solution in go (**brute force** approach and the **optimized** approach.)
 
