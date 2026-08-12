@@ -30,9 +30,9 @@ This folder houses my solutions to the DSA questions, and my solutions are wriit
     └── roman_to_integer
 ```
 
-The two topic solutions; **arrays** and **strings** has solution in go (**brute force** approach and the **optimized** approach.)
+The two topic solutions; **arrays** and **strings** has solutions in go (**brute force** approach and the **optimized** approach.)
 
-THe go file with the `suffix A` has the bruite force solution while the file with the `suffix B` has the optimized solution.
+In those folders, the go file with the `suffix A` has the bruite force solution while the file with the `suffix B` has the optimized solution.
 
 ---
 Other Problems and solutions are grouped under the sub-folder `/dsa_code_general`
