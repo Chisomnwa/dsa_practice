@@ -5,7 +5,7 @@ This is where I document the questions I solve on Data Structures and Algorithm.
 
 # My Solution to the DSA S0lutions and Pattens
 
-This folder houses my solutions to the DSA questions, and my solutions are wriiten in Go and Python
+This repository houses my solutions to the DSA questions, and my solutions are wriiten in Go and Python
 
 # Folder Structure
 
