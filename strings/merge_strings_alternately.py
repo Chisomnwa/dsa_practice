@@ -131,24 +131,24 @@ class Solution:
     
         """
         # Brute Force Implementation
-        # result = ""
+        result = ""
 
-        # len_word1 = len(word1)
-        # len_word2 = len(word2)
+        len_word1 = len(word1)
+        len_word2 = len(word2)
 
-        # limit = min(len_word1, len_word2)
+        limit = min(len_word1, len_word2)
 
-        # for i in range(limit):
-        #     result += word1[i]
-        #     result += word2[i]
+        for i in range(limit):
+            result += word1[i]
+            result += word2[i]
 
-        # if len_word1 > limit:
-        #     result += word1[limit:]
+        if len_word1 > limit:
+            result += word1[limit:]
 
-        # if len_word2 > limit:
-        #     result += word2[limit:]
-        m
-        # return result
+        if len_word2 > limit:
+            result += word2[limit:]
+        
+        return result
 
         # Optimized approach implementation (Two Pointers)
         result = ""
