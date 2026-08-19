@@ -56,7 +56,7 @@ class Solution:
             - True if strings are anagrams
             - False otherwise
 
-        Goal: Determine wether both strings contain the same characters with the same frequencies, regardless of their other.
+        Goal: Determine whether both strings contain the same characters with the same frequencies, regardless of their other.
 
         Brute Force:
         1. Sorth both starings
@@ -69,7 +69,7 @@ class Solution:
         if sorted_s == sorted_t:
             return True
 
-    return False
+        return False
 
         Time complexity: Time complexity : O (n log n)
         Space complexity: O(n)
