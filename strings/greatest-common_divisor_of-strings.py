@@ -158,7 +158,7 @@ class Solution:
 
         That's our answer.
 
-        Pseudocode:
+        Pseudocode (Mathematical GCD & String Manipulation)):
         gcdOfStrings(str1, str2)
 
             if str1 + str2 is not equal to str2 + str1
@@ -199,6 +199,3 @@ class Solution:
         length = gcd(len(str1), len(str2))
 
         return str1[:length]
-
-
-    
