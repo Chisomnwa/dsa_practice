@@ -14,7 +14,7 @@ class Solution:
         Goal: For every position, calculate the product of everything to its left and everything to its right
 
         And we have two importatnt restrictions:
-        - No didisio
+        - No division
         - Must be in O(n) time
 
         Edge cases:
@@ -31,7 +31,7 @@ class Solution:
 
         - When an array have negative elements
             e.g nums = [-1, 1, 0, -3, 3]
-            - so we need to find a negative to handle negative products
+            - so we need to find a way to handle negative products
 
         
         Wakthrough:
@@ -61,7 +61,7 @@ class Solution:
 
         Brute Force Approach:
         Intuition:
-        To get the product all the elements except the particular position that I am pointing at starting from left to right.
+        To get the product of all the elements except the particular position that I am pointing at starting from left to right.
         i.e For every i, loop through the entire array and multiply everything except nums[i]
 
         Algorithm:
@@ -69,9 +69,9 @@ class Solution:
         2. Loop through each index i in nums
         3. For each element, start a product value at 1
         4. Go through each index j in nums
-        5. If i an j are different, multiply nums[j] and product
-        5. After going through everything, append product to answer
-        6. Return answer
+        5. If i and j are different, multiply nums[j] and product
+        6. After going through everything, append product to answer
+        7. Return answer
 
         Pseudocode:
         answer = []
@@ -87,12 +87,12 @@ class Solution:
 
         return answer
 
-        Time complexity: O(n^2) because we are looping and iterating through the elements in numby exatly twice
-        Space complexity: O(n) becuas eof the extra data structure created
+        Time complexity: O(n^2) because we are looping and iterating through the elements in nums exatly twice
+        Space complexity: O(n) becuase of the extra data structure created; answer
 
         - - - 
 
-        Optimized Approach (Prefix and Suuffix)
+        Optimized Approach (Prefix and Suffix)
         Intuition:
 
         The key insight here, for every index:
@@ -112,14 +112,14 @@ class Solution:
         Everything to the left: 1 * 2 = 2
         Everything to the rigght: 4
 
-        Therefore answer[2] 1 * 2 * 4 = 8
+        Therefore answer[2] = 1 * 2 * 4 = 8
 
 
         LET'S VISUALIZE THE WHOLE THING
 
-        Prefix products:
+        PREFIX PRODUCTS:
+        For each position, calculate the product before it:
 
-        for each position, calculate the product before it:
         nums = [1, 2, 3, 4]
 
         prefix = [1, 1, 2, 6]
@@ -129,36 +129,36 @@ class Solution:
         at index[0]:
         nothing to the left -> 1
 
-        At index[1]:
-        1 -> 1
+        at index[1]:
+        we have 1 to the left -> 1
 
-        At index[2]:
-        1 * 2 -> 2
+        at index[2]:
+        we have 1 * 2 to the left -> 2
 
-        At index[3]:
-        1 * 2 * 3 = 6
+        at index[3]:
+        we have 1 * 2 * 3 to the left -> 6
 
 
         Suffix products:
 
         For each position, calculate the product after it
-        [24, 12, 8, 6]
+        nums = [1, 2, 3, 4]
 
-        
+        suffix = [24, 12, 4, 1]
+
         How is that?
 
-        nums = [1, 2, 3, 4]
-        At index[3]:
-        1 -> 1
+        at index[3]:
+        we have nothing after it -> 1
 
-        At index[2]:
-        4 -> 4
+        at index[2]:
+        we have 4 after it -> 4
 
-        At index[1]:
-        4 * 3 -> 12
+        at index[1]:
+        we have 3 * 4 after it -> 12
 
-        At index[0]:
-        4 * 3 * 2 * 1 = 24
+        at index[0]:
+        we have 2 * 3 * 4 after it -> 24
 
         Then, multiiply prefix * suffix:
         prefix: [1,  1,  2, 6]
@@ -201,13 +201,12 @@ class Solution:
 
         Follow Up O(1) space
 
-        We don't actuallly need a sepearte prefix array
-
-        The output array itself can store the prefox products
+        We actually don't need a seperate prefix array or a seperate suffix array 
+        The output array itself can store the prefix products
 
         answer = prefix products
 
-        then we make a second pass from the righhtt and multiply prefix into answer
+        then we make a second pass from right, and multiply prefix into answer
 
         Example:
         nums = [1, 2, 3, 4]
@@ -217,22 +216,38 @@ class Solution:
         answer: [1, 1, 2, 6] <- prefix information
 
         Second pass:
-        We walk from right to left while maintaining one variable:
+        We walk from right to left while maintaining one variable
         suffix = 1
 
         At index[3]:
-        answer[3] = 6 * 1 = 6
+        answer[3] = answer[3] * suffix
+        answer[3] = 6 * 1
 
         suffix = suffix * nums[3]
             = 1 * 4 = 4
 
         At index[2]:
+        answer[2] = answer[2] * suffix
         answer[2] = 2 * 4 = 8
 
         suffix = suffix * nums[2]
             = 4 * 3 = 12
 
-        And so on...
+        At index[1]:
+        answer[1] = answer[1] * suffix
+        answer[1] = 1 * 12 = 12
+
+        suffix = suffix * nums[1]
+            = 12 * 2 = 24
+
+        at index[0]:
+        answer[0] = answer[0] * suffix
+        answer[0] = 1 * 24 = 24
+
+        suffix = suffix * nums[0]
+            = 24 * 1 = 24
+
+        Final answer = [24, 12, 8, 6]
 
         Algorithm:
         1. Create an output array filled with 1
@@ -245,7 +260,9 @@ class Solution:
         8. Return the output array
 
         Pseudocode:
-        Create answer array filled with 1
+        Create answer array filled with 
+        
+        prefix = 1
 
         For each index from left to right:
             answer[index] = prefix
@@ -313,4 +330,17 @@ class Solution:
             suffix = suffix * nums[i]
 
         return answer
+
+        """
+        The big picture:
+        - The first pass puts the left-side products into answer:
+        answer = [1, 1, 2, 6]
+
+        - The second pass multiples each of those by the right-side product:
+                    prefix     suffix
+        index 0:       1    *    24   =  24
+        index 1:       1    *    12   =  12
+        index 2:       2    *     4   =   8
+        index 3:       6    *     1   =   6
+        """
         
